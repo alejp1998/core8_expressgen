@@ -1,7 +1,7 @@
 //Creamos base de datos para almacenar los quizzes comunes a todos los usuarios
 const Sequelize = require('sequelize');
 
-const options = {logging: false, operatorsAliases: false};
+const options = {logging: false};
 const sequelize = new Sequelize("sqlite:db.sqlite", options);
 
 const Quiz = sequelize.define(  // define Quiz model (table quizzes)
