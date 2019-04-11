@@ -4,7 +4,7 @@ var quizController = require('../controllers/quiz.js')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'QUIZ 2019' });
+  res.render('index.ejs');
 });
 
 /* GET quizzes */
@@ -12,7 +12,7 @@ router.get('/quizzes', quizController.index);
 
 /*GET Credits*/
 router.get('/credits',function(req, res, next) {
-	res.render('credits', {title: 'Credits'});
+	res.render('credits.ejs');
 });
 
 module.exports = router;

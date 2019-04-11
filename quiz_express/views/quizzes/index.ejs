@@ -1,13 +1,11 @@
-<section>
-    <h1><%=title%></h1>
+    <h1>All Quizzes</h1>
     <table class="quizzes>">
       <% for (var i in quizzes) { %>
       <% var quiz = quizzes[i]; %>
         <tr>
           <div>
-              <td><p><%=quiz.question%>: <%=quiz.answer%></p></td>
+              <td><p class="question"><%=quiz.question%>: <%=quiz.answer%></p></td>
           </div>
         </tr>
       <% } %>
     </table>
-</section>
