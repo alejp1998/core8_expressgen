@@ -3,6 +3,44 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+#page{
+	display: flex;
+	flex-flow: row wrap;
+	margin: 2px auto;
+	padding: 0px;
+}
+
+.main{
+	flex: 1 100%;
+	border: 1px solid #999;
+	padding: 2px;
+	margin: 1px;
+	background: #white;
+}
+
+#mainHeader, #mainNav, #mainFooter{
+	text-align: center;
+}
+
+#mainHeader{
+	color: white;
+	background-color: black;
+}
+
+#mainHeader h1{
+	margin: 8px;
+}
+
+#mainNav a{
+  color: #C72CBE;
+  margin: 0px 5px;
+}
+
+#mainSection{
+	padding: 20px;
+	text-align: left;
+}
+
+#mainFooter a{
+  color: #2FDAE6;
 }
