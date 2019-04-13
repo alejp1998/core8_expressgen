@@ -16,8 +16,8 @@ const Browser = require('zombie');
 let error_critical = null;
 
 // CONSTANTS
-const T_WAIT = 2; // Time between commands
-const T_TEST = 2 * 60; // Time between tests (seconds)
+const T_WAIT = 10; // Server launch time (seconds)
+const T_TEST = 5 * 60; // Time between tests (seconds)
 const path_assignment = path.resolve(path.join(__dirname, "../quiz_express"));
 const path_json = path.join(path_assignment, 'package.json');
 const quizzes_orig = path.join(path_assignment, 'quizzes.sqlite');
@@ -142,9 +142,6 @@ describe("CORE19-08_quiz_express", function () {
             server.on('error', function (data) {
                 error_launch += data
             });
-            server.stderr.on('data', function (data) {
-                error_launch += data
-            });
             await to(timeout(T_WAIT * 1000));
             this.msg_err = `Error running 'node bin/www'\n\t\t\tReceived: ${error_launch}`;
             if (error_launch.length) {
@@ -258,7 +255,7 @@ describe("CORE19-08_quiz_express", function () {
     });
 
     it('', async function () {
-        const expected = "Answer Number 1";
+        const expected = "Question Number 1";
         this.name = `12: Checking that the server shows the questions at ${url+"/quizzes"}...`;
         this.score = 2;
         if (error_critical) {
